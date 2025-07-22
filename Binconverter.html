@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Universal Binary Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="background-decoration"></div>
+  
+  <button class="theme-toggle" onclick="toggleDarkMode()">
+    <span id="theme-icon">🌙</span>
+    <span id="theme-text">Dark Mode</span>
+  </button>
+
+  <header>
+    <h1>Universal Binary Converter</h1>
+    <p class="subtitle">Convert between Text, Alphanumeric, Hex and Binary formats</p>
+    <div class="creator-badge">Created by Aadrit Sarkar</div>
+  </header>
+
+  <main>
+    <div class="converter-container">
+      <div class="mode-selector">
+        <h3>
+          <span class="mode-icon">⚙️</span>
+          Select Conversion Mode
+        </h3>
+        <div class="mode-options">
+          <div class="mode-option">
+            <input type="radio" id="text-mode" name="conversion-mode" value="text" checked>
+            <label for="text-mode">
+              <span class="mode-icon">📝</span>
+              <span>Text ↔ Binary</span>
+            </label>
+          </div>
+          <div class="mode-option">
+            <input type="radio" id="alphanumeric-mode" name="conversion-mode" value="alphanumeric">
+            <label for="alphanumeric-mode">
+              <span class="mode-icon">🔤</span>
+              <span>Alphanumeric ↔ Binary</span>
+            </label>
+          </div>
+          <div class="mode-option">
+            <input type="radio" id="hex-mode" name="conversion-mode" value="hex">
+            <label for="hex-mode">
+              <span class="mode-icon">🔢</span>
+              <span>Hex ↔ Binary</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="converter-grid">
+        <div class="converter-section">
+          <h3 class="section-title">
+            <div class="section-icon" id="input-icon">📝</div>
+            <span id="input-title">Input to Binary</span>
+          </h3>
+          <div id="input-container">
+            <input type="text" id="inputField" placeholder="Enter your text here..." />
+            <div class="input-hint" id="input-hint">Enter any text to convert to binary</div>
+          </div>
+          <button class="convert-btn" onclick="convertToBinary()">Convert to Binary</button>
+          <div class="output" id="binaryOutput">
+            <button class="copy-btn" onclick="copyToClipboard('binaryOutput')">Copy</button>
+          </div>
+        </div>
+
+        <div class="converter-section">
+          <h3 class="section-title">
+            <div class="section-icon">💾</div>
+            Binary to <span id="output-type">Text</span>
+          </h3>
+          <textarea id="binaryInput" rows="3" placeholder="Enter space-separated binary here (e.g., 01001000 01100101 01101100 01101100 01101111)"></textarea>
+          <div class="input-hint">Enter space-separated binary numbers</div>
+          <button class="convert-btn" onclick="convertFromBinary()">Convert from Binary</button>
+          <div class="output" id="convertedOutput">
+            <button class="copy-btn" onclick="copyToClipboard('convertedOutput')">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="creator-info">
+        Crafted with ❤️ by <span class="creator-title">Aadrit Sarkar</span>
+      </div>
+      <div class="copyright">
+        © 2025 Universal Binary Converter | All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
